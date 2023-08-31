@@ -7,14 +7,14 @@ function App() {
   const [count, setCount] = useState(0)
   const [total, setTotal] = useState(0)
   const findBook = async () => {
-    let book = BookName.first + "-"
-    let colName = BookName.first
+    let book = BookName.first.toUpperCase() + "-"
+    let colName = BookName.first.toUpperCase()
     if (BookName.second !== "") {
-      colName += "-" + BookName.second
-      book += BookName.second + "-"
+      colName += "-" + BookName.second.toUpperCase()
+      book += BookName.second.toUpperCase() + "-"
     }
 
-    book += BookName.third
+    book += BookName.third.toUpperCase()
     let docRef = doc(db, colName, book)
     const docSnap = await getDoc(docRef)
     console.log("bookName : " + book)
